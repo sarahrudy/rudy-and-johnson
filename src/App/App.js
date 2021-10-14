@@ -10,20 +10,15 @@ class App extends Component {
     super()
     this.state = {
       movies: movieData.movies,
-      movieDetails: {}
-
     }
   }
 
-  getMovie(id) {
-    const foundMovie = this.state.movies.find(movie =>
-      movie.id === id)
+  getMovie = (id) => {
+    const foundMovie = this.state.movies.filter(movie => movie.id === id)
     this.setState({movies: foundMovie})
-    // this.setState({movies:[...this.state.movies, this.state.movieDetails]})
   }
 
   render() {
-    console.log(this.state.movies)
     return (
       <main className='App'>
         <NavBar />
