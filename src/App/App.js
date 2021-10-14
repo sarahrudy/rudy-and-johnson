@@ -6,16 +6,14 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData
+      movies: []
      
     }
   }
 
   render() {
     return (
-      <main className="App">
-        <Movies />
-      </main>
+     <h1>hello</h1>
     )
   }
 }

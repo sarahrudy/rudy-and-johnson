@@ -1,10 +1,10 @@
-import React from 'react'
-import './Movies.css' 
-import { movieData } from './src/movieData.js'
+// import React from 'react'
+// import './Movies.css' 
+// import { movieData } from './movieData.js'
 
-const Movies = () => {
-  <div>Hi!</div>
-}
+// const Movies = () => {
+//   <div>Hi!</div>
+// }
 
 
-export default Movies
+// export default Movies
