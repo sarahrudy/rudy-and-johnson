@@ -1,17 +1,17 @@
 import React from 'react'
 import './Movies.css'
 import MovieCard from '../MovieCard/MovieCard'
-import { movieData } from '../movieData'
 
-
-const Movies = ({ movies }) => {
-  console.log(movies)
+const Movies = ({ movies, getMovie }) => {
   const movieCard = movies.map(movie => {
     return (
     <div className="movies">
       <MovieCard
+        id={ movie.id }
         poster_path={ movie.poster_path }
         title={ movie.title }
+        key={ movie.id }
+        getMovie={ getMovie }
       />
     </div>
     )
