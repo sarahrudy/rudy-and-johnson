@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
 import './App.css'
 import Movies from '../Movies/Movies'
-import { movieData } from '../movieData'
 import NavBar from '../NavBar/NavBar'
 import MovieDetails from '../MovieDetails/MovieDetails'
+import { getAllMovies } from '../apiCalls'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData.movies,
+      movies: [],
     }
+  }
+
+  componentDidMount() {
+    getAllMovies()
+    .then(data => this.setState({ movies: [...this.state.movies, ...data.movies] }))
   }
 
   getMovie = (id) => {
