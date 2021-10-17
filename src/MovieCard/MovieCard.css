@@ -1,4 +1,14 @@
+article {
+  cursor: pointer;
+}
+
 img {
   height: 300px;
   width: auto;
+}
+
+@media (hover: hover) {
+  .movie-card:hover {
+    opacity: 75%
+  }
 }
