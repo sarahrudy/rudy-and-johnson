@@ -10,6 +10,7 @@ const Movies = ({ movies, displayMovieDetails }) => {
         id={ movie.id }
         poster_path={ movie.poster_path }
         title={ movie.title }
+        average_rating= { movie.average_rating }
         key={ movie.id }
         displayMovieDetails={ displayMovieDetails }
       />
