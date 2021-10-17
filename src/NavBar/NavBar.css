@@ -14,27 +14,32 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-color: #F2F4F4;
 }
 
 .form-label {
   margin-right: 5px;
   font-family: 'Lora', serif;
+  background-color: #F2F4F4;
 }
 
 .searchBtn {
   border: none;
-  background-color: white;
+  background-color: #F2F4F4;
   font-family: 'Lora', serif;
+  font-size: 25px;
 }
 
 .title {
   font-size: 100px;
   font-family: 'Poiret One', cursive;
   margin-bottom: 25px;
+  color: #0B5345;
 }
 
 input {
   font-family: 'Lora', serif;
+  font-size: 25px;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;

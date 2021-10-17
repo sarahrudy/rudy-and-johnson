@@ -10,7 +10,7 @@ const Movies = ({ movies, displayMovieDetails }) => {
         id={ movie.id }
         poster_path={ movie.poster_path }
         title={ movie.title }
-        average_rating= { movie.average_rating }
+        average_rating= { `${Math.round(movie.average_rating)} OUT OF 10 STARS` }
         key={ movie.id }
         displayMovieDetails={ displayMovieDetails }
       />

@@ -3,15 +3,25 @@ article {
   border-radius: 2px;
 }
 
-img {
+.movie-poster {
   height: 300px;
   width: auto;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 
+.movie-title {
+
+}
+
+.movie-rating {
+  display: flex;
+  justify-content: center;
+  font-family: 'Poiret One', cursive;
+}
+
 @media (hover: hover) {
-  .movie-card:hover {
+  .movie-poster:hover {
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
 }
