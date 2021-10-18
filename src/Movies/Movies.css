@@ -1,9 +1,7 @@
 .movies-container {
-  width: 85%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-right: -100px;
 }
 
 .movies {
