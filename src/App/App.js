@@ -34,7 +34,10 @@ class App extends Component {
   displayMovies = () => {
     if (this.state.foundMovies.length > 0) {
       return (
+        <>
         <Movies movies={this.state.foundMovies} displayMovieDetails={this.displayMovieDetails}/>
+        <button onClick={() => this.clearSearch()}>Clear Search</button>
+        </>
       )
     } else {
       return (
@@ -57,13 +60,18 @@ class App extends Component {
     this.findMovie()
   }
 
+  clearSearch = () => {
+    this.setState({ foundMovies: [] })
+    this.setState({ searchTerm: ''})
+  }
+
   render() {
     return (
       <main className='App'>
-        <NavBar submitSearch={this.submitSearch} handleChange={this.handleChange}/>
+        <NavBar submitSearch={this.submitSearch} handleChange={this.handleChange} />
         <Route exact path="/movies/:id" render={({ match }) => {
           const id = parseInt(match.params.id)
-          return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails} />}
+          return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails}/>}
         } />
         <Route exact path="/" render={this.displayMovies} />
 
