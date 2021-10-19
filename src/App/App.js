@@ -3,6 +3,7 @@ import './App.css'
 import Movies from '../Movies/Movies'
 import NavBar from '../NavBar/NavBar'
 import MovieDetails from '../MovieDetails/MovieDetails'
+import { Route } from 'react-router-dom'
 import { getAllMovies, getSingleMovie } from '../apiCalls'
 
 class App extends Component {
@@ -10,7 +11,7 @@ class App extends Component {
     super()
     this.handleChange = this.handleChange.bind(this)
     this.submitSearch = this.submitSearch.bind(this)
-  
+
     this.state = {
       movies: [],
       currentMovie: [],
@@ -40,7 +41,7 @@ class App extends Component {
   }
 
   submitSearch = (event) => {
-    event.preventDefault() 
+    event.preventDefault()
     this.findMovie()
   }
 
@@ -48,10 +49,15 @@ class App extends Component {
     return (
       <main className='App'>
         <NavBar submitSearch={this.submitSearch} handleChange={this.handleChange}/>
-        {this.state.currentMovie && <MovieDetails movie={ this.state.currentMovie} />}
-        {this.state.movies.length > 1 && <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} />}
+        {this.state.movies &&
+        <Route exact path="/" render={() => <Movies movies={this.state.movies} />} /> }
+        {this.state.currentMovie &&
+        <Route exact path="movies/:id" render={ ({ match }) => {
+          const id = parseInt(match.params.id);
+          return <MovieDetails id={id}/> }} /> }
+
       </main>
-    )
+    );
   }
 }
 
