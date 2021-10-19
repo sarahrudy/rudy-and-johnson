@@ -31,6 +31,18 @@ class App extends Component {
     .then(currentMovie => this.setState({ currentMovie: currentMovie.movie }))
   }
 
+  displayMovies = () => {
+    if (this.state.foundMovies.length > 0) {
+      return (
+        <Movies movies={this.state.foundMovies} displayMovieDetails={this.displayMovieDetails}/>
+      )
+    } else {
+      return (
+        <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/>
+      )
+    }
+  }
+
   handleChange = (event) => {
     this.setState({ searchTerm: event.target.value })
   }
@@ -53,10 +65,10 @@ class App extends Component {
           const id = parseInt(match.params.id)
           return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails} />}
         } />
-        <Route exact path="/" render={() => <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} />} />
+        <Route exact path="/" render={this.displayMovies} />
 
       </main>
-    );
+    )
   }
 }
 
