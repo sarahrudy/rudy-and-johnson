@@ -2,7 +2,6 @@ import React from 'react'
 import './MovieDetails.css'
 
 const MovieDetails = ({ movie }) => {
-  console.log(movie)
   return (
     <article className="movie-details" id={movie.id}>
     <h3>{movie.title}</h3>
