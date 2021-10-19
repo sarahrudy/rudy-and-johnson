@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './NavBar.css'
 
-const NavBar = () => {
+const NavBar = ({ submitSearch, handleChange }) => {
+
   return (
     <div className="nav-bar">
       <h1 className="title">RUDY & JOHNSON</h1>
@@ -13,13 +14,15 @@ const NavBar = () => {
             type="text"
             placeholder="Start your search here."
             name="searchTerm"
+            onChange={handleChange}
             />
             </label>
-            <button className="searchBtn">Submit</button>
+            <button className="searchBtn" onClick={(event) => submitSearch(event)}>Submit</button>
           </form>
         </div>
     </div>
   )
 }
+
 
 export default NavBar
