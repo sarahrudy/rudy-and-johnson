@@ -49,12 +49,11 @@ class App extends Component {
     return (
       <main className='App'>
         <NavBar submitSearch={this.submitSearch} handleChange={this.handleChange}/>
-        {this.state.movies &&
-        <Route exact path="/" render={() => <Movies movies={this.state.movies} />} /> }
-        {this.state.currentMovie &&
-        <Route exact path="movies/:id" render={ ({ match }) => {
-          const id = parseInt(match.params.id);
-          return <MovieDetails id={id}/> }} /> }
+        <Route exact path="/movies/:id" render={({ match }) => {
+          const id = parseInt(match.params.id)
+          return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails} />}
+        } />
+        <Route exact path="/" render={() => <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} />} />
 
       </main>
     );

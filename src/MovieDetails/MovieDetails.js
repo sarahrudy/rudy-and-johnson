@@ -1,13 +1,14 @@
 import React from 'react'
 import './MovieDetails.css'
+import { NavLink } from 'react-router-dom'
 
-const MovieDetails = ({ id, title, backdrop_path, release_date }) => {
-  console.log(id)
+const MovieDetails = ({ movie }) => {
+  console.log(movie.id)
   return (
-    <article className="movie-details" id={id}>
-    <h3>{title}</h3>
-      <img src={backdrop_path} alt=''/>
-      <p>{release_date}</p>
+    <article className="movie-details" id={movie.id}>
+    <h3>{movie.title}</h3>
+    <img src={movie.backdrop_path} alt=''/>
+    <p>{movie.release_date}</p>
     </article>
   )
 }
