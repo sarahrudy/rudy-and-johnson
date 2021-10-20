@@ -1,6 +1,6 @@
 import React from 'react'
 import './MovieDetails.css'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const MovieDetails = ({ movie }) => {
   return (
