@@ -1,5 +1,13 @@
 .movies-container {
-  width: 300px;
-  border: 2px solid black;
-  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movies {
+  margin: 10px;
+}
+
+p {
+    font-family: 'Lora', serif;
 }
