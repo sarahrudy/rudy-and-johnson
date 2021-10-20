@@ -3,7 +3,6 @@ import './MovieDetails.css'
 import { NavLink } from 'react-router-dom'
 
 const MovieDetails = ({ movie }) => {
-  console.log(movie.id)
   return (
     <article className="movie-details" id={movie.id}>
     <h3>{movie.title}</h3>
