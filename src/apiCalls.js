@@ -11,7 +11,7 @@ export const getSingleMovie = (id) => {
 export const checkError = (response) => {
   if (!response.ok) {
     throw new Error(
-      "Sorry...Internet Server Error"
+      "Sorry...Server Error"
     )
   } else {
     return response.json()
