@@ -71,7 +71,6 @@ class App extends Component {
     return (
       <main className='App'>
         <NavBar submitSearch={this.submitSearch} handleChange={this.handleChange} />
-        {this.state.error && <h2>Sorry...server error.</h2>}
         <Switch>
           <Route exact path="/movies/:id" render={({ match }) => {
             const id = parseInt(match.params.id)
