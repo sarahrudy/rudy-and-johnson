@@ -87,6 +87,12 @@
   font-size: 17px;
   font-weight: 400;
   line-height: 1.2;
+}
 
+.movie-details__back-btn {
+  background-color: none;
+  border: solid 2px white;
+  color: white;
+  margin-top: 100px;
 }
 
