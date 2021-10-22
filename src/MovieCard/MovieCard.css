@@ -10,11 +10,9 @@ article {
   border-top-right-radius: 2px;
 }
 
-.movie-title {
-
-}
-
 .movie-rating {
+  text-decoration: none;
+  color: black;
   display: flex;
   justify-content: center;
   font-family: 'Poiret One', cursive;

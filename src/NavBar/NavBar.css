@@ -1,16 +1,13 @@
 .nav-bar {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-style: double;
-  border-size: 3px;
+  justify-content: space-between;
+  align-items: space-between;
   font-family: 'Lora', serif;
-
+  margin-bottom: 100px;
 }
 
 .search-container {
-  width: 85%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -23,22 +20,48 @@
   background-color: #F2F4F4;
 }
 
-.searchBtn {
+.searchBtn, .about-link {
   border: none;
   background-color: #F2F4F4;
   font-family: 'Lora', serif;
   font-size: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  height: 35px;
+}
+
+.about-link {
+  font-family: 'Poiret One', cursive;
+  font-size: 40px;
+  margin-top: 75px;
+  margin-left: 350px;
 }
 
 .title {
-  font-size: 100px;
+  align-self: center;
+  font-size: 110px;
   font-family: 'Poiret One', cursive;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
+  margin-left: 50px;
+  letter-spacing: 15px;
   color: #0B5345;
+  margin-bottom: 15px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-style: double;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
 }
 
 input {
   font-family: 'Lora', serif;
+  background-color: #F2F4F4;
   font-size: 25px;
   border-top: 0px;
   border-left: 0px;
@@ -46,7 +69,16 @@ input {
 }
 
 .navBar-p {
-  font-size: 45px;
+  font-size: 50px;
   font-family: 'Ballet', cursive;
-  font-stretch: semi-expanded;
+  letter-spacing: 5px;
+}
+
+@media (hover: hover) {
+  .about-link:hover, .searchBtn:hover {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: double;
+  }
 }
