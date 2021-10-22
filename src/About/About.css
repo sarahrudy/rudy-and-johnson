@@ -1,4 +1,41 @@
-.rudy-photo, .johnson-photo {
-  height: 500px;
-  width: auto;
+.about-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rudy-photo {
+  height: auto;
+  width: 500px;
+  margin-top: 50px;
+  margin-bottom: 65px;
+  cursor: pointer;
+}
+
+.johnson-photo {
+  height: auto;
+  width: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.rudy-section, .johnson-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  border-width: 5px;
+  border-style: double;
+  width: 45%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+h3 {
+  font-size: 50px;
+  font-family: 'Poiret One', cursive;
+}
+
+.rudy-bio, .johnson-bio {
+  width: 90%;
 }

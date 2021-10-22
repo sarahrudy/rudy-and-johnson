@@ -85,6 +85,14 @@ class App extends Component {
         } />
         <Route exact path="/" render={this.displayMovies} />
         <Route exact path="/about" render={ About } />
+        <Route path='/anna' component={() => {
+          window.location.href = 'https://www.linkedin.com/in/aesprague/';
+          return null;
+        }}/>
+        <Route path='/sarah' component={() => {
+          window.location.href = 'https://www.linkedin.com/in/rudysarah/';
+          return null;
+        }}/>
 
       </main>
     )
