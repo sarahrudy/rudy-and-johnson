@@ -1,0 +1,98 @@
+.movie-details-container {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 95%;
+  margin: 25px auto;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  border-radius: 3px;
+  background-color: rgb(0, 0, 0); 
+  z-index: 5;
+}
+
+.movie-backdrop {
+  width: 70%;
+  background: linear-gradient(to right, rgb(0, 0, 0) 10%, rgba(148, 148, 148, 0.178));
+}
+
+.movie-backdrop__image {
+  width: 100%;
+  position: relative;
+  z-index: -5;
+  display: block;
+  border-radius: 3px;
+}
+
+.movie-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  padding: 30px 15px 0 30px;
+  z-index: 5;
+}
+
+.movie-details__title {
+  color: crimson;
+  margin-top: -8px;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.movie-details__release-date {
+  display: inline-block;
+  color: rgb(68 105 243);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.movie-details__genres {
+  display: inline-block;
+  margin-left: 10px;
+  color: #d0e2f7;
+}
+
+.movie-details__runtime {
+  display: inline-block;
+  padding: 5px;
+  margin-left: 5px;
+  font-size: 18px;
+  color: white;
+  border-radius: 3px;
+}
+
+.movie-details__tagline {
+  margin-top: 5px;
+  min-height: 18px;
+  color: white;
+}
+
+.movie-details__average-rating {
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+  color: white;
+}
+
+.movie-details__poster {
+  height: 200px;
+  margin: 10px 0 10px 0;
+}
+
+.movie-details__overview {
+  display: block;
+  width: 100%;
+  clear:both;
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.movie-details__back-btn {
+  background-color: none;
+  border: solid 2px white;
+  color: white;
+  margin-top: 100px;
+}
+

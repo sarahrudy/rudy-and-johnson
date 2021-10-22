@@ -3,7 +3,8 @@ import './App.css'
 import Movies from '../Movies/Movies'
 import NavBar from '../NavBar/NavBar'
 import MovieDetails from '../MovieDetails/MovieDetails'
-import { Route } from 'react-router-dom'
+import Error from '../Error/Error'
+import { Route, Switch } from 'react-router-dom'
 import { getAllMovies, getSingleMovie } from '../apiCalls'
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
 
     this.state = {
       movies: [],
-      currentMovie: [],
+      currentMovie: {},
       searchTerm: '',
       foundMovies: [],
       error: ''
@@ -24,6 +25,7 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
     .then(data => this.setState({ movies: [...this.state.movies, ...data.movies] }))
+    .catch(error => this.setState({ error: error }))
   }
 
   displayMovieDetails = (id) => {
@@ -69,12 +71,14 @@ class App extends Component {
     return (
       <main className='App'>
         <NavBar submitSearch={this.submitSearch} handleChange={this.handleChange} />
-        <Route exact path="/movies/:id" render={({ match }) => {
-          const id = parseInt(match.params.id)
-          return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails}/>}
-        } />
-        <Route exact path="/" render={this.displayMovies} />
-
+        <Switch>
+          <Route exact path="/movies/:id" render={({ match }) => {
+            const id = parseInt(match.params.id)
+            return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails}/>}
+          } />
+          <Route exact path="/" render={this.displayMovies} />
+          <Route component={ Error } />
+        </Switch>
       </main>
     )
   }
