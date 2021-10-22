@@ -3,6 +3,7 @@ import './App.css'
 import Movies from '../Movies/Movies'
 import NavBar from '../NavBar/NavBar'
 import MovieDetails from '../MovieDetails/MovieDetails'
+import About from '../About/About'
 import { Route } from 'react-router-dom'
 import { getAllMovies, getSingleMovie } from '../apiCalls'
 
@@ -83,6 +84,7 @@ class App extends Component {
           return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails}/>}
         } />
         <Route exact path="/" render={this.displayMovies} />
+        <Route exact path="/about" render={ About } />
 
       </main>
     )
