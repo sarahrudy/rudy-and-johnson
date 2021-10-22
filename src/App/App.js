@@ -4,7 +4,8 @@ import Movies from '../Movies/Movies'
 import NavBar from '../NavBar/NavBar'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import About from '../About/About'
-import { Route } from 'react-router-dom'
+import Error from '../Error/Error'
+import { Route, Switch } from 'react-router-dom'
 import { getAllMovies, getSingleMovie } from '../apiCalls'
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
     .then(data => this.setState({ movies: [...this.state.movies, ...data.movies] }))
+    .catch(error => this.setState({ error: error }))
   }
 
   displayMovieDetails = (id) => {
@@ -79,6 +81,7 @@ class App extends Component {
     return (
       <main className='App'>
         <NavBar value={this.state.searchTerm} submitSearch={this.submitSearch} handleChange={this.handleChange}/>
+        <Switch>
         <Route exact path="/movies/:id" render={({ match }) => {
           const id = parseInt(match.params.id)
           return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails}/>}
@@ -93,7 +96,8 @@ class App extends Component {
           window.location.href = 'https://www.linkedin.com/in/rudysarah/';
           return null;
         }}/>
-
+        <Route component={ Error } />
+        </Switch>
       </main>
     )
   }
