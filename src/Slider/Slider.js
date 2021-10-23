@@ -24,15 +24,21 @@ class MovieSlider extends Component {
         <h2>Featured Films</h2>
         <Slider {...settings}>
           <div>
-            <img src={this.props.slideOne.backdrop_path} alt={this.props.slideOne.title} />
+            <img className="slide-img"
+            src={this.props.slideOne.backdrop_path}
+            alt={this.props.slideOne.title} />
             <h3>{this.props.slideOne.title}</h3>
           </div>
           <div>
-            <img src={this.props.slideTwo.backdrop_path} alt={this.props.slideTwo.title} />
+            <img className="slide-img"
+            src={this.props.slideTwo.backdrop_path}
+            alt={this.props.slideTwo.title} />
             <h3>{this.props.slideTwo.title}</h3>
           </div>
           <div>
-            <img src={this.props.slideThree.backdrop_path} alt={this.props.slideThree.title} />
+            <img className="slide-img"
+            src={this.props.slideThree.backdrop_path}
+            alt={this.props.slideThree.title} />
             <h3>{this.props.slideThree.title}</h3>
           </div>
         </Slider>
