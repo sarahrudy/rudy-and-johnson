@@ -21,6 +21,9 @@ class App extends Component {
       searchTerm: '',
       foundMovies: [],
       hasSearched: false,
+      slideOne: {},
+      slideTwo: {},
+      slideThree: {},
       error: ''
     }
   }
@@ -28,6 +31,12 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
     .then(data => this.setState({ movies: [...this.state.movies, ...data.movies] }))
+    getSingleMovie(619592)
+    .then(movieOne => this.setState({ slideOne: movieOne.movie}))
+    getSingleMovie(400160)
+    .then(movieTwo => this.setState({ slideTwo: movieTwo.movie}))
+    getSingleMovie(500840)
+    .then(movieThree => this.setState({ slideThree: movieThree.movie}))
     .catch(error => this.setState({ error: error }))
   }
 
@@ -51,7 +60,11 @@ class App extends Component {
     } else {
       return (
         <>
-        <MovieSlider />
+        <MovieSlider
+        slideOne={this.state.slideOne}
+        slideTwo={this.state.slideTwo}
+        slideThree={this.state.slideThree}
+        />
         <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/>
         </>
       )
