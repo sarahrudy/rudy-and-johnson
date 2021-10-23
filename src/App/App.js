@@ -64,6 +64,7 @@ class App extends Component {
         slideOne={this.state.slideOne}
         slideTwo={this.state.slideTwo}
         slideThree={this.state.slideThree}
+        displayMovieDetails={this.displayMovieDetails}
         />
         <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/>
         </>
