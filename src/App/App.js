@@ -31,9 +31,9 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
     .then(data => this.setState({ movies: [...this.state.movies, ...data.movies] }))
-    getSingleMovie(619592)
+    getSingleMovie(579583)
     .then(movieOne => this.setState({ slideOne: movieOne.movie}))
-    getSingleMovie(400160)
+    getSingleMovie(337401)
     .then(movieTwo => this.setState({ slideTwo: movieTwo.movie}))
     getSingleMovie(500840)
     .then(movieThree => this.setState({ slideThree: movieThree.movie}))
