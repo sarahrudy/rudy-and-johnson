@@ -26,7 +26,7 @@ class App extends Component {
 
   componentDidMount = () => {
     getAllMovies()
-    .then(data => this.setState({ movies: [...this.state.movies, ...data.movies] }))
+    .then(data => this.setState({ movies: [...data.movies] }))
     .catch(error => this.setState({ error: error }))
   }
 
@@ -82,21 +82,21 @@ class App extends Component {
       <main className='App'>
         <NavBar value={this.state.searchTerm} submitSearch={this.submitSearch} handleChange={this.handleChange}/>
         <Switch>
-        <Route exact path="/movies/:id" render={({ match }) => {
-          const id = parseInt(match.params.id)
-          return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails}/>}
-        } />
-        <Route exact path="/" render={this.displayMovies} />
-        <Route exact path="/about" render={ About } />
-        <Route path='/anna' component={() => {
-          window.location.href = 'https://www.linkedin.com/in/aesprague/';
-          return null;
-        }}/>
-        <Route path='/sarah' component={() => {
-          window.location.href = 'https://www.linkedin.com/in/rudysarah/';
-          return null;
-        }}/>
-        <Route component={ Error } />
+          <Route exact path="/movies/:id" render={({ match }) => {
+            const id = parseInt(match.params.id)
+            return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails}/>}
+          } />
+          <Route exact path="/" render={this.displayMovies} />
+          <Route exact path="/about" render={ About } />
+          <Route path='/anna' component={() => {
+            window.location.href = 'https://www.linkedin.com/in/aesprague/';
+            return null;
+          }}/>
+          <Route path='/sarah' component={() => {
+            window.location.href = 'https://www.linkedin.com/in/rudysarah/';
+            return null;
+          }}/>
+          <Route component={ Error } />
         </Switch>
       </main>
     )
