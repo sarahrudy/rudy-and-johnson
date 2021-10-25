@@ -2,6 +2,8 @@
 ### Turing Mod 3 FE Pair Project
 #### [Project Spec](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
+#### Summary
+Welcome to Rudy & Johnson -- our take on the classic Rotten Tomatillos project for Mod 3 Front End students at Turing. In our app, you'll be able to see a variety of movies that have been reviewed.
 
 #### Learning Goals
 1. Gain competency with React fundamentals
