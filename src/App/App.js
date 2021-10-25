@@ -11,13 +11,8 @@ import { getAllMovies, getSingleMovie } from '../apiCalls'
 class App extends Component {
   constructor() {
     super()
-    // we can probably get rid of these when MovieDetails is a class component too
-    // this.handleChange = this.handleChange.bind(this)
-    // this.submitSearch = this.submitSearch.bind(this)
-    // this.clearSearch = this.clearSearch.bind(this)
     this.state = {
       movies: [],
-      // currentMovie: {},
       searchTerm: '',
       foundMovies: [],
       hasSearched: false,

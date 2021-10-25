@@ -46,7 +46,6 @@ render () {
           <img className="movie-details__poster" src={this.state.movie.poster_path} alt={this.state.movie.title} />
           <p className="movie-details__overview">{this.state.movie.overview}</p>
           <Trailer trailerKey={ this.state.trailerKey } /> 
-          {/* <Trailer trailerKey="01ON04GCwKs" /> */}
           <Link to="/" className="movie-details__back-btn">◀ BACK TO MOVIES</Link>
         </div>
       </article>
