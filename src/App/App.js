@@ -39,14 +39,17 @@ class App extends Component {
   displayMovies = () => {
     if (this.state.foundMovies.length > 0) {
       return (
-        <>
+        <div className="search-results">
         <Movies movies={this.state.foundMovies} />
-        <button onClick={() => this.clearSearch()}>Clear Search</button>
-        </>
+        <button className="clear-button" onClick={() => this.clearSearch()}>Clear Search</button>
+        </div>
       )
     } else if (this.state.foundMovies.length === 0 && this.state.hasSearched === true) {
       return (
-        <h2>sorry</h2>
+        <div className="error-search">
+        <h2>It doesn't look like we've reviewed that movie, yet! Try another title.</h2>
+        <button className="clear-button" onClick={() => this.clearSearch()}>Clear Search</button>
+        </div>
       )
     } else {
       return (
