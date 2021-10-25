@@ -8,6 +8,11 @@ export const getSingleMovie = (id) => {
     .then(response => response.json())
 }
 
+export const getTrailer = (id) => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
+    .then((response) => response.json());
+};
+
 export const checkError = (response) => {
   if (!response.ok) {
     throw new Error(
