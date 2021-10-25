@@ -11,16 +11,19 @@ class MovieDetails extends Component {
       movie: [],
       trailerKey: '',
       error: '',
+      status: 'loading'
     }
   }
-  
+
   componentDidMount = () => {
-    getSingleMovie(this.props.id)
-    .then(currentMovie => this.setState({ movie: currentMovie.movie }))
-  
-    getTrailer(this.props.id)
-    .then(data => this.setState[{ trailerKey: console.log(data.videos[0].key) }])
-}
+    Promise.all([ getSingleMovie(this.props.id), getTrailer(this.props.id) ])
+      .then(data => {
+        this.setState({ movie: data[0].movie, trailerKey: data[1].videos[0].key, status: 'success', error: '' })
+      })
+      .catch(error => {
+        this.setState({ error: error.message, status: 'error' }) 
+      })
+  }
 
 render () {
     const formatDate = (date) => date?.split('-')[0]
@@ -42,7 +45,8 @@ render () {
           <p className="movie-details__average-rating">{Math.floor(this.state.movie.average_rating)}/10 </p>
           <img className="movie-details__poster" src={this.state.movie.poster_path} alt={this.state.movie.title} />
           <p className="movie-details__overview">{this.state.movie.overview}</p>
-          <Trailer trailerKey={ this.state.trailer } />
+          <Trailer trailerKey={ this.state.trailerKey } /> 
+          {/* <Trailer trailerKey="01ON04GCwKs" /> */}
           <Link to="/" className="movie-details__back-btn">◀ BACK TO MOVIES</Link>
         </div>
       </article>
