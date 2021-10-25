@@ -11,12 +11,13 @@ import { getAllMovies, getSingleMovie } from '../apiCalls'
 class App extends Component {
   constructor() {
     super()
-    this.handleChange = this.handleChange.bind(this)
-    this.submitSearch = this.submitSearch.bind(this)
-    this.clearSearch = this.clearSearch.bind(this)
+    // we can probably get rid of these when MovieDetails is a class component too
+    // this.handleChange = this.handleChange.bind(this)
+    // this.submitSearch = this.submitSearch.bind(this)
+    // this.clearSearch = this.clearSearch.bind(this)
     this.state = {
       movies: [],
-      currentMovie: {},
+      // currentMovie: {},
       searchTerm: '',
       foundMovies: [],
       hasSearched: false,
@@ -26,20 +27,15 @@ class App extends Component {
 
   componentDidMount = () => {
     getAllMovies()
-    .then(data => this.setState({ movies: [...data.movies] }))
+    .then(data => this.setState({ movies: data.movies }))
     .catch(error => this.setState({ error: error }))
-  }
-
-  displayMovieDetails = (id) => {
-    getSingleMovie(id)
-    .then(currentMovie => this.setState({ currentMovie: currentMovie.movie }))
   }
 
   displayMovies = () => {
     if (this.state.foundMovies.length > 0) {
       return (
         <>
-        <Movies movies={this.state.foundMovies} displayMovieDetails={this.displayMovieDetails}/>
+        <Movies movies={this.state.foundMovies} />
         <button onClick={() => this.clearSearch()}>Clear Search</button>
         </>
       )
@@ -49,10 +45,10 @@ class App extends Component {
       )
     } else {
       return (
-        <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/>
+        <Movies movies={this.state.movies} />
       )
+    }
   }
-}
 
   handleChange = (event) => {
     this.setState({ searchTerm: event.target.value })
@@ -62,7 +58,7 @@ class App extends Component {
     const tryAgain = <p>Oh no!</p>
     const searchRegex = new RegExp(this.state.searchTerm, 'i')
     this.setState({ foundMovies: this.state.movies.filter(movie => movie.title.match(searchRegex))})
-    }
+  }
 
 
   submitSearch = (event) => {
@@ -84,7 +80,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/movies/:id" render={({ match }) => {
             const id = parseInt(match.params.id)
-            return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails}/>}
+            return <MovieDetails id={id} />}
           } />
           <Route exact path="/" render={this.displayMovies} />
           <Route exact path="/about" render={ About } />

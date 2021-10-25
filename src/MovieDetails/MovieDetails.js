@@ -1,47 +1,54 @@
 import React, { Component } from 'react';
 import './MovieDetails.css'
 import { Link } from 'react-router-dom'
-import { getTrailer } from '../apiCalls'
 import Trailer from '../Trailer/Trailer'
+import { getSingleMovie, getTrailer } from '../apiCalls'
 
-// class MovieDetails extends Component {
-//   constructor() {
-//     super()
-//     this.state = {
-//       movie: {},
-//       video: {},
-//       error: '',
-//     }
-//   }
-// }
+class MovieDetails extends Component {
+  constructor() {
+    super()
+    this.state = {
+      movie: [],
+      trailerKey: '',
+      error: '',
+    }
+  }
+  
+  componentDidMount = () => {
+    getSingleMovie(this.props.id)
+    .then(currentMovie => this.setState({ movie: currentMovie.movie }))
+  
+    getTrailer(this.props.id)
+    .then(data => this.setState[{ trailerKey: console.log(data.videos[0].key) }])
+}
 
-const MovieDetails = ({ movie }) => {
-  const formatDate = (date) => date?.split('-')[0]
-  const hours = Math.floor(movie.runtime / 60)
-  const minutes = movie.runtime % 60
+render () {
+    const formatDate = (date) => date?.split('-')[0]
+    const hours = Math.floor(this.state.movie.runtime / 60)
+    const minutes = this.state.movie.runtime % 60
 
-  console.log(movie.id)
   return (
-    <section className="movie-details-container" id={movie.id}>
+    <section className="movie-details-container" id={this.state.movie.id}>
       <div className="movie-backdrop"> 
-        <img className="movie-backdrop__image" src={movie.backdrop_path} alt={movie.title} />
+        <img className="movie-backdrop__image" src={this.state.movie.backdrop_path} alt={this.state.movie.title} />
       </div>
       <article className="movie-details">
         <div>
-          <h1 className="movie-details__title">{movie.title}</h1>
-          <p className="movie-details__release-date">{formatDate(movie.release_date)}</p>
-          {movie.genres && <p className="movie-details__genres">{movie.genres.join(' / ')}</p>}
+          <h1 className="movie-details__title">{this.state.movie.title}</h1>
+          <p className="movie-details__release-date">{formatDate(this.state.movie.release_date)}</p>
+          {this.state.movie.genres && <p className="movie-details__genres">{this.state.movie.genres.join(' / ')}</p>}
           <p className="movie-details__runtime">{hours}h{minutes}m</p>
-          {movie.tagline && <p className="movie-details__tagline">{movie.tagline}</p>}
-          <p className="movie-details__average-rating">{Math.floor(movie.average_rating)}/10 </p>
-          <img className="movie-details__poster" src={movie.poster_path} alt={movie.title} />
-          <p className="movie-details__overview">{movie.overview}</p>
-          <Trailer movieKey={getTrailer(movie.id)} />
+          {this.state.movie.tagline && <p className="movie-details__tagline">{this.state.movie.tagline}</p>}
+          <p className="movie-details__average-rating">{Math.floor(this.state.movie.average_rating)}/10 </p>
+          <img className="movie-details__poster" src={this.state.movie.poster_path} alt={this.state.movie.title} />
+          <p className="movie-details__overview">{this.state.movie.overview}</p>
+          <Trailer trailerKey={ this.state.trailer } />
           <Link to="/" className="movie-details__back-btn">◀ BACK TO MOVIES</Link>
         </div>
       </article>
     </section>
-  )
+    )
+  }
 }
 
 export default MovieDetails
