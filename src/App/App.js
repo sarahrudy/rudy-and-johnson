@@ -5,6 +5,7 @@ import NavBar from '../NavBar/NavBar'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import About from '../About/About'
 import Error from '../Error/Error'
+import MovieSlider from '../Slider/Slider'
 import { Route, Switch } from 'react-router-dom'
 import { getAllMovies, getSingleMovie } from '../apiCalls'
 
@@ -16,6 +17,9 @@ class App extends Component {
       searchTerm: '',
       foundMovies: [],
       hasSearched: false,
+      slideOne: {},
+      slideTwo: {},
+      slideThree: {},
       error: ''
     }
   }
@@ -23,6 +27,12 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
     .then(data => this.setState({ movies: data.movies }))
+    getSingleMovie(579583)
+    .then(movieOne => this.setState({ slideOne: movieOne.movie}))
+    getSingleMovie(337401)
+    .then(movieTwo => this.setState({ slideTwo: movieTwo.movie}))
+    getSingleMovie(500840)
+    .then(movieThree => this.setState({ slideThree: movieThree.movie}))
     .catch(error => this.setState({ error: error }))
   }
 
@@ -40,7 +50,15 @@ class App extends Component {
       )
     } else {
       return (
+        <>
+        <MovieSlider
+        slideOne={this.state.slideOne}
+        slideTwo={this.state.slideTwo}
+        slideThree={this.state.slideThree}
+        displayMovieDetails={this.displayMovieDetails}
+        />
         <Movies movies={this.state.movies} />
+        </>
       )
     }
   }

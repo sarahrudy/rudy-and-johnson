@@ -30,6 +30,8 @@ render () {
     const hours = Math.floor(this.state.movie.runtime / 60)
     const minutes = this.state.movie.runtime % 60
 
+const MovieDetails = ({ movie }) => {
+  const star = '⭐️'
   return (
     <section className="movie-details-container" id={this.state.movie.id}>
       <div className="movie-backdrop"> 

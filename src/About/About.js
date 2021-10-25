@@ -9,7 +9,7 @@ const About = () => {
     <div className="about-section">
       <div className="rudy-section">
       <h3>Sarah Rudy</h3>
-      <NavLink to="/sarah">
+      <NavLink to="/sarah" target="_blank">
       <img className="rudy-photo" src={ RudyPhoto } alt={"Sarah Rudy"}/>
       </NavLink>
       <p className="rudy-bio">Hello!
@@ -25,7 +25,7 @@ Thank you again for taking the time to read through this quick intro! If it soun
 
       <div className="johnson-section">
       <h3>Anna Johnson</h3>
-      <NavLink to="/anna">
+      <NavLink to="/anna" target="_blank">
       <img className="johnson-photo" src={ JohnsonPhoto } alt='Anna Johnson Bio Photo'/>
       </NavLink>
       <p className="johnson-bio">Hello!
