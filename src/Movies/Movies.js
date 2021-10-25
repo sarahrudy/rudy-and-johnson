@@ -24,6 +24,4 @@ const Movies = ({ movies, displayMovieDetails }) => {
   return <div className="movies-container">{movieCard}</div>
 }
 
-
-
 export default Movies

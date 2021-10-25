@@ -12,12 +12,8 @@ import { getAllMovies, getSingleMovie } from '../apiCalls'
 class App extends Component {
   constructor() {
     super()
-    this.handleChange = this.handleChange.bind(this)
-    this.submitSearch = this.submitSearch.bind(this)
-    this.clearSearch = this.clearSearch.bind(this)
     this.state = {
       movies: [],
-      currentMovie: {},
       searchTerm: '',
       foundMovies: [],
       hasSearched: false,
@@ -30,7 +26,7 @@ class App extends Component {
 
   componentDidMount = () => {
     getAllMovies()
-    .then(data => this.setState({ movies: [...this.state.movies, ...data.movies] }))
+    .then(data => this.setState({ movies: data.movies }))
     getSingleMovie(579583)
     .then(movieOne => this.setState({ slideOne: movieOne.movie}))
     getSingleMovie(337401)
@@ -40,16 +36,11 @@ class App extends Component {
     .catch(error => this.setState({ error: error }))
   }
 
-  displayMovieDetails = (id) => {
-    getSingleMovie(id)
-    .then(currentMovie => this.setState({ currentMovie: currentMovie.movie }))
-  }
-
   displayMovies = () => {
     if (this.state.foundMovies.length > 0) {
       return (
         <>
-        <Movies movies={this.state.foundMovies} displayMovieDetails={this.displayMovieDetails}/>
+        <Movies movies={this.state.foundMovies} />
         <button onClick={() => this.clearSearch()}>Clear Search</button>
         </>
       )
@@ -66,11 +57,11 @@ class App extends Component {
         slideThree={this.state.slideThree}
         displayMovieDetails={this.displayMovieDetails}
         />
-        <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/>
+        <Movies movies={this.state.movies} />
         </>
       )
+    }
   }
-}
 
   handleChange = (event) => {
     this.setState({ searchTerm: event.target.value })
@@ -80,7 +71,7 @@ class App extends Component {
     const tryAgain = <p>Oh no!</p>
     const searchRegex = new RegExp(this.state.searchTerm, 'i')
     this.setState({ foundMovies: this.state.movies.filter(movie => movie.title.match(searchRegex))})
-    }
+  }
 
 
   submitSearch = (event) => {
@@ -100,21 +91,21 @@ class App extends Component {
       <main className='App'>
         <NavBar value={this.state.searchTerm} submitSearch={this.submitSearch} handleChange={this.handleChange}/>
         <Switch>
-        <Route exact path="/movies/:id" render={({ match }) => {
-          const id = parseInt(match.params.id)
-          return <MovieDetails movie={this.state.currentMovie} id={id} displayMovieDetails={this.displayMovieDetails}/>}
-        } />
-        <Route exact path="/" render={this.displayMovies} />
-        <Route exact path="/about" render={ About } />
-        <Route path='/anna' component={() => {
-          window.location.href = 'https://www.linkedin.com/in/aesprague/';
-          return null;
-        }}/>
-        <Route path='/sarah' component={() => {
-          window.location.href = 'https://www.linkedin.com/in/rudysarah/';
-          return null;
-        }}/>
-        <Route component={ Error } />
+          <Route exact path="/movies/:id" render={({ match }) => {
+            const id = parseInt(match.params.id)
+            return <MovieDetails id={id} />}
+          } />
+          <Route exact path="/" render={this.displayMovies} />
+          <Route exact path="/about" render={ About } />
+          <Route path='/anna' component={() => {
+            window.location.href = 'https://www.linkedin.com/in/aesprague/';
+            return null;
+          }}/>
+          <Route path='/sarah' component={() => {
+            window.location.href = 'https://www.linkedin.com/in/rudysarah/';
+            return null;
+          }}/>
+          <Route component={ Error } />
         </Switch>
       </main>
     )
