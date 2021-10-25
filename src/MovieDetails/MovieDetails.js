@@ -21,7 +21,7 @@ class MovieDetails extends Component {
         this.setState({ movie: data[0].movie, trailerKey: data[1].videos[0].key, status: 'success', error: '' })
       })
       .catch(error => {
-        this.setState({ error: error.message, status: 'error' }) 
+        this.setState({ error: error.message, status: 'error' })
       })
   }
 
@@ -30,11 +30,9 @@ render () {
     const hours = Math.floor(this.state.movie.runtime / 60)
     const minutes = this.state.movie.runtime % 60
 
-const MovieDetails = ({ movie }) => {
-  const star = '⭐️'
   return (
     <section className="movie-details-container" id={this.state.movie.id}>
-      <div className="movie-backdrop"> 
+      <div className="movie-backdrop">
         <img className="movie-backdrop__image" src={this.state.movie.backdrop_path} alt={this.state.movie.title} />
       </div>
       <article className="movie-details">
@@ -47,7 +45,7 @@ const MovieDetails = ({ movie }) => {
           <p className="movie-details__average-rating">{Math.floor(this.state.movie.average_rating)}/10 </p>
           <img className="movie-details__poster" src={this.state.movie.poster_path} alt={this.state.movie.title} />
           <p className="movie-details__overview">{this.state.movie.overview}</p>
-          <Trailer trailerKey={ this.state.trailerKey } /> 
+          <Trailer trailerKey={ this.state.trailerKey } />
           <Link to="/" className="movie-details__back-btn">◀ BACK TO MOVIES</Link>
         </div>
       </article>
