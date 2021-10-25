@@ -18,4 +18,12 @@ describe("NavBar display", () => {
     cy.get('input')
       .type('Mulan').should('have.value', 'Mulan')
   })
+
+  it('should get an error message if user searches for movie not in directory', () => {
+    cy.get('input[placeholder="Start your search here."]')
+    cy.get('input')
+      .type('jliajdlj').should('have.value', 'jliajdlj')
+      .get('.searchBtn')
+      .click().get('h2').should('be.visible')
+  })
 })
