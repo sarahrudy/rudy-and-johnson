@@ -14,11 +14,11 @@
 
 
 #### Technologies Used
-React
-React Router
-[React Slick](https://react-slick.neostack.com/)
-CSS
-End-to-end Testing with Cypress
-This project was bootstrapped with Create React App.
+* React
+* React Router
+* [React Slick](https://react-slick.neostack.com/)
+* CSS
+* End-to-end Testing with Cypress
+* _This project was bootstrapped with Create React App._
 
 #### Instructions for Running and Viewing
