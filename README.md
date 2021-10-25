@@ -22,3 +22,6 @@
 * _This project was bootstrapped with Create React App._
 
 #### Instructions for Running and Viewing
+1. Clone down this repo. 
+2. Once you've cloned the repo to your machine, run npm start.
+3. A browser window should open up with our film review site, 'Rudy & Johnson'. Here, you can view reviewed movies, search for specific movies as well as view trailers and details about the movies. Happy viewing!
