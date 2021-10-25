@@ -3,7 +3,7 @@
 #### [Project Spec](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
 #### Summary
-Welcome to Rudy & Johnson -- our take on the classic Rotten Tomatillos project for Mod 3 Front End students at Turing. In our app, you'll be able to see a variety of movies that have been reviewed.
+Welcome to Rudy & Johnson -- our take on the classic Rotten Tomatillos project for Mod 3 Front End students at Turing. In our app, you'll be able to see a variety of movies that have been reviewed. For each movie, you'll be able to view various details including a summary, a rating, and a trailer. Thank you for stopping by to check out our app! 🍿
 
 #### Learning Goals
 1. Gain competency with React fundamentals
