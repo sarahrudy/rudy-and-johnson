@@ -23,6 +23,7 @@ const MovieDetails = ({ movie }) => {
           <p className="movie-details__average-rating">{Math.floor(movie.average_rating)}/10 </p>
           <img className="movie-details__poster" src={movie.poster_path} alt={movie.title} />
           <p className="movie-details__overview">{movie.overview}</p>
+          <Trailer embedId={} />
           <Link to="/" className="movie-details__back-btn">◀ BACK TO MOVIES</Link>
         </div>
       </article>
