@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react';
 import './MovieDetails.css'
 import { Link } from 'react-router-dom'
+import { getTrailer } from '../apiCalls'
+import Trailer from '../Trailer/Trailer'
 
-const formatDate = (date) => date?.split('-')[0]
+// class MovieDetails extends Component {
+//   constructor() {
+//     super()
+//     this.state = {
+//       movie: {},
+//       video: {},
+//       error: '',
+//     }
+//   }
+// }
 
 const MovieDetails = ({ movie }) => {
+  const formatDate = (date) => date?.split('-')[0]
   const hours = Math.floor(movie.runtime / 60)
   const minutes = movie.runtime % 60
 
+  console.log(movie.id)
   return (
     <section className="movie-details-container" id={movie.id}>
       <div className="movie-backdrop"> 
@@ -23,7 +36,7 @@ const MovieDetails = ({ movie }) => {
           <p className="movie-details__average-rating">{Math.floor(movie.average_rating)}/10 </p>
           <img className="movie-details__poster" src={movie.poster_path} alt={movie.title} />
           <p className="movie-details__overview">{movie.overview}</p>
-          <Trailer embedId={} />
+          <Trailer movieKey={getTrailer(movie.id)} />
           <Link to="/" className="movie-details__back-btn">◀ BACK TO MOVIES</Link>
         </div>
       </article>
