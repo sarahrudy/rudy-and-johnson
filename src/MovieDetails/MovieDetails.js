@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 const formatDate = (date) => date?.split('-')[0]
 
 const MovieDetails = ({ movie }) => {
+  const star = '⭐️'
   return (
     <section className="movie-details-container" id={movie.id}>
-      <div className="movie-backdrop"> 
+      <div className="movie-backdrop">
         <img className="movie-backdrop__image" src={movie.backdrop_path} alt={movie.title} />
       </div>
       <article className="movie-details">
@@ -17,7 +18,7 @@ const MovieDetails = ({ movie }) => {
           {movie.genres && <p className="movie-details__genres">{movie.genres.join(' / ')}</p>}
           <p className="movie-details__runtime">{movie.runtime}m </p>
           {movie.tagline && <p className="movie-details__tagline">{movie.tagline}</p>}
-          <p className="movie-details__average-rating">{Math.floor(movie.average_rating)}/10 </p>
+          <p className="movie-details__average-rating">{star.repeat(Math.floor(movie.average_rating)/2)} </p>
           <img className="movie-details__poster" src={movie.poster_path} alt={movie.title} />
           <p className="movie-details__overview">{movie.overview}</p>
           <Link to="/" className="movie-details__back-btn">◀ BACK TO MOVIES</Link>

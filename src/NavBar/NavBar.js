@@ -7,7 +7,9 @@ const NavBar = ({ submitSearch, handleChange, value }) => {
   return (
     <div className="nav-bar">
       <div className="title-container">
+        <NavLink to="/">
         <h1 className="title">RUDY & JOHNSON</h1>
+        </NavLink>
         <NavLink to="/about" className="about-link">ABOUT US</NavLink>
       </div>
       <div className="search-container">

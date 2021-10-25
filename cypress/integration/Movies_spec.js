@@ -12,4 +12,8 @@ describe('User Movie Flows', () => {
   it('should be able to see all movie ratings on page load', () => {
     cy.get('.movie-rating').should('be.visible')
   });
+
+  it('should be able to see a slider displaying three movies on rotation', () => {
+    cy.get('.movie-slider').should('be.visible')
+  });
 })
