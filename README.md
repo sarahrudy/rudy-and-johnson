@@ -4,6 +4,7 @@
 
 #### Summary
 Welcome to Rudy & Johnson -- our take on the classic Rotten Tomatillos project for Mod 3 Front End students at Turing. In our app, you'll be able to see a variety of movies that have been reviewed. For each movie, you'll be able to view various details including a summary, a rating, and a trailer. Thank you for stopping by to check out our app! 🍿
+![rudy johnson](https://user-images.githubusercontent.com/78389005/138785672-6aa5b266-0353-4d75-b056-72335ed2a469.gif)
 
 #### Refactors/Future Iterations
 We'd love to make this app even better by adding a few features:
