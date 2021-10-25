@@ -1,14 +1,16 @@
-.video-responsive {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
+.trailer {
+  position:fixed;
+  top:0;
+  height:100%;
+  width:100%;
+  background: rgba(0, 0, 0, 0.699);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: openTrailer 500ms ease-in;
 }
 
-.video-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
+.trailer-container {
+  position: relative;
 }

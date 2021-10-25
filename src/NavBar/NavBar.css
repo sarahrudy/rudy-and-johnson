@@ -44,7 +44,7 @@
 
 .title {
   align-self: center;
-  font-size: 100px;
+  font-size: 70px;
   font-family: 'Poiret One', cursive;
   margin-bottom: 0px;
   margin-left: 50px;
@@ -73,7 +73,7 @@ input {
 }
 
 .navBar-p {
-  font-size: 50px;
+  font-size: 30px;
   font-family: 'Ballet', cursive;
   letter-spacing: 5px;
 }
