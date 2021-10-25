@@ -1,9 +1,11 @@
 import React from 'react'
 import './Trailer.css' 
 
-const Trailer = ({ trailerKey }) => {
+const Trailer = ({ trailerKey, toggleTrailer }) => {
   return (
-    <div className="react-player-wrapper">
+    <div className="trailer">
+      <div className="trailer-container">
+      <button onClick={toggleTrailer}>X</button>
       <iframe className="iframe"
         key={trailerKey}
         width="853"
@@ -14,6 +16,7 @@ const Trailer = ({ trailerKey }) => {
         allowFullScreen
         title="Embedded youtube"
       />
+      </div>
     </div>
   )
 }
