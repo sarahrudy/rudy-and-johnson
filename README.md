@@ -5,6 +5,11 @@
 #### Summary
 Welcome to Rudy & Johnson -- our take on the classic Rotten Tomatillos project for Mod 3 Front End students at Turing. In our app, you'll be able to see a variety of movies that have been reviewed. For each movie, you'll be able to view various details including a summary, a rating, and a trailer. Thank you for stopping by to check out our app! 🍿
 
+#### Refactors/Future Iterations
+We'd love to make this app even better by adding a few features:
+* Responsive design for screens of all sizes, including mobile.
+* The ability for a user to create an account in order to log in and leave user reviews on movies.
+
 #### Learning Goals
 1. Gain competency with React fundamentals
 2. Learn how to test React components & asynchronous JS
