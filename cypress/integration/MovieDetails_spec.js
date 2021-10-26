@@ -47,11 +47,7 @@ describe('Individual Movie Details Flows', () => {
         .click()
         .url().should('not.include', 'movies')
         .url().should('eq', 'http://localhost:3000/')
-    });
-    
-    // it('should get error if user searches for a movie not in directory', () => {
-    //   cy.visit('')
-    // })
+    })
   })
 
 

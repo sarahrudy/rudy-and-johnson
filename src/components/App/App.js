@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import './App.css'
 import Movies from '../Movies/Movies'
-import NavBar from '../NavBar/NavBar'
-import MovieDetails from '../MovieDetails/MovieDetails'
+import NavBar from '../../NavBar/NavBar'
+import MovieDetails from '../../MovieDetails/MovieDetails'
 import About from '../About/About'
 import Error from '../Error/Error'
-import MovieSlider from '../Slider/Slider'
+import MovieSlider from '../../Slider/Slider'
 import { Route, Switch } from 'react-router-dom'
-import { getAllMovies, getSingleMovie } from '../apiCalls'
+import { getAllMovies, getSingleMovie } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
