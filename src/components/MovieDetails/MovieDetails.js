@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './MovieDetails.css'
 import { Link } from 'react-router-dom'
 import Trailer from '../Trailer/Trailer'
-import { getSingleMovie, getTrailer } from '../apiCalls'
+import { getSingleMovie, getTrailer } from '../../apiCalls'
 
 class MovieDetails extends Component {
   constructor() {
