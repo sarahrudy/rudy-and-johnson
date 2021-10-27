@@ -1,88 +1,70 @@
-.nav-bar {
-  display: flex;
-  flex-direction: column;
+.nav-bar-container {
+  display: inline-flex;
   justify-content: space-between;
-  align-items: space-between;
-  font-family: 'Lora', serif;
-  margin-bottom: 100px;
-}
-
-.search-container {
-  display: flex;
+  width: 100%;
   align-items: center;
-  justify-content: space-around;
-  background-color: #F2F4F4;
-  margin-top: 50px;
-  margin-bottom: -35px;
+  margin: 20px;
+  font-family: 'Lora', serif;
 }
 
-.form-label {
-  margin-right: 5px;
-  font-family: 'Lora', serif;
-  background-color: #F2F4F4;
+.white-movie-reel {
+  display: inline-flex;
+  height: 13vh;
+  width: auto;
+  margin-left: 30px;
 }
 
-.searchBtn, .about-link {
-  border: none;
-  background-color: #F2F4F4;
-  font-family: 'Lora', serif;
-  font-size: 25px;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-  height: 35px;
+.title {
+  display: inline-flex;
+  font-family: 'Poiret One', cursive;
+  font-size: 4em;
+  font-weight: 800;
+  color: #39414D;
 }
 
 .about-link {
   font-family: 'Poiret One', cursive;
-  font-size: 40px;
-  margin-top: 65px;
-  margin-left: 350px;
-  margin-bottom: 25px;
-  padding-bottom: 40px;
-}
-
-.title {
-  align-self: center;
-  font-size: 70px;
-  font-family: 'Poiret One', cursive;
-  margin-bottom: 0px;
-  margin-left: 50px;
-  letter-spacing: 15px;
-  color: #0B5345;
-  margin-bottom: 15px;
-}
-
-.title-container {
-  display: flex;
-  justify-content: flex-start;
-  border-style: double;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  margin-top: 50px;
-}
-
-input {
-  font-family: 'Lora', serif;
-  background-color: #F2F4F4;
-  font-size: 25px;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
+  color: #F9FBFA;
+  font-size: 35px;
 }
 
 .navBar-p {
-  font-size: 30px;
+  font-size: 2rem;
   font-family: 'Ballet', cursive;
+  color: white;
   letter-spacing: 5px;
 }
 
-@media (hover: hover) {
-  .about-link:hover, .searchBtn:hover {
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    border-style: double;
+.search-container {
+  display: flex;
+  margin-right: 50px;
+}
+
+.form-input {
+  margin-right: 5px;
+  padding: 5px;
+  font-family: 'Lora', serif;
+  background-color: #F2F4F4;
+  color: #39414D;
+  font-size: 20px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.searchBtn {
+  border: 1px solid white;
+  padding: 5px;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  background-color: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .navBar-p {
+    display: none
   }
 }
+

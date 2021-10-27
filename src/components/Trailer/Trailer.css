@@ -4,6 +4,7 @@
   height:100%;
   width:100%;
   background: rgba(0, 0, 0, 0.699);
+  box-shadow: 0 25.6px 57.6px 0 rgb(0 0 0 / 22%), 0 4.8px 14.4px 0 rgb(0 0 0 / 18%);
   z-index: 5;
   display: flex;
   justify-content: center;

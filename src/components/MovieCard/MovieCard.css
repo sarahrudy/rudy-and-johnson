@@ -1,13 +1,14 @@
 article {
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 .movie-poster {
-  height: 300px;
+  height: 250px;
   width: auto;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border-radius: 5px;
+  margin: 25px 15px 0 15px;
+  border: 1px solid #F3F4F6;
 }
 
 .movie-rating {
@@ -15,12 +16,13 @@ article {
   color: black;
   display: flex;
   justify-content: flex-start;
+  margin-left: 13px;
   letter-spacing: 8px;
   font-size: 25px;
 }
 
 @media (hover: hover) {
   .movie-poster:hover {
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0px 10px -14px 14px #FFF;
   }
 }
