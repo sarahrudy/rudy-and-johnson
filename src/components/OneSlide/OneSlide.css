@@ -1,0 +1,33 @@
+.one-slide {
+  position: relative;
+  max-height: 500px;
+}
+
+.one-slide::after{
+  position: absolute;
+  height: 100%;
+  width: 90%;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.514) 30%, rgba(146, 146, 146, 0.267) 100%);
+}
+
+.one-slide__img {
+  width: 100%;
+}
+
+.one-slide__title {
+  position: absolute;
+  margin: 40px;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-size: clamp(12px, 8vw, 60px);
+  z-index: 5;
+  font-family: 'Poiret One', cursive;
+  font-weight: 800;
+}
+
+.one-slide__placeholder {
+  width: 100%;
+  height: 56vw;
+  background-color: rgb(3, 3, 40);
+}
