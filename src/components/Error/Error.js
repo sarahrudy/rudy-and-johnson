@@ -1,6 +1,6 @@
 import React from 'react'
 import './Error.css'
-import brokenMovie from '../Images/broken-movie.png'
+import brokenMovie from '../../images/broken-movie.png'
 import { Link } from 'react-router-dom'
 
 const Error = () => {
