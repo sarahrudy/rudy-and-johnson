@@ -1,0 +1,40 @@
+
+.movie-slider {
+  margin-bottom: 20px;
+  box-shadow: 0 25.6px 57.6px 0 rgb(0 0 0 / 22%), 0 4.8px 14.4px 0 rgb(0 0 0 / 18%);
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+/* BUTTONS */
+.slick-prev {
+  left: 25px;
+  z-index: 5;
+}
+
+.slick-prev:before {
+  color: #fff;
+  font-size: 40px;
+}
+
+.slick-next {
+  right: 40px;
+}
+
+.slick-next:before {
+  color: #fff;
+  font-size: 40px;
+}
+
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li button:before {
+  opacity: .50;
+  color: #fff;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #fff;
+}
