@@ -7,17 +7,12 @@
   font-family: 'Lora', serif;
 }
 
-.white-movie-reel {
-  display: inline-flex;
-  height: 13vh;
-  width: auto;
-  margin-left: 30px;
-}
-
 .title {
   display: inline-flex;
   font-family: 'Poiret One', cursive;
   font-size: 4em;
+  width: 100%;
+  height: auto;
   font-weight: 800;
   color: #39414D;
 }
@@ -65,6 +60,15 @@
 @media screen and (max-width: 1000px) {
   .navBar-p {
     display: none
+  }
+}
+
+  @media (hover: hover) {
+  .about-link:hover, .searchBtn:hover {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: double;
   }
 }
 
