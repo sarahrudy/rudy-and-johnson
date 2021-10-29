@@ -1,6 +1,6 @@
 import React from 'react';
-import RudyPhoto from './lubeck.png'
-import JohnsonPhoto from './0B177B52-5B5A-4F43-9E2B-9F805038FD1C.png'
+import RudyPhoto from '../../images/lubeck.png'
+import JohnsonPhoto from '../../images/johnson.png'
 import { NavLink } from 'react-router-dom'
 import './About.css';
 
