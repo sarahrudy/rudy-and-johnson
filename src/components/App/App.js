@@ -7,7 +7,7 @@ import About from '../About/About'
 import Error from '../Error/Error'
 import MovieSlider from '../MovieSlider/MovieSlider'
 import { Route, Switch } from 'react-router-dom'
-import { getAllMovies, getSingleMovie } from '../../apiCalls'
+import { getAllMovies } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
@@ -27,12 +27,6 @@ class App extends Component {
   componentDidMount = () => {
     getAllMovies()
     .then(data => this.setState({ movies: data.movies }))
-    getSingleMovie(579583)
-    .then(movieOne => this.setState({ slideOne: movieOne.movie}))
-    getSingleMovie(337401)
-    .then(movieTwo => this.setState({ slideTwo: movieTwo.movie}))
-    getSingleMovie(500840)
-    .then(movieThree => this.setState({ slideThree: movieThree.movie}))
     .catch(error => this.setState({ error: error }))
   }
 
@@ -66,7 +60,6 @@ class App extends Component {
   }
 
   findMovie = () => {
-    const tryAgain = <p>Oh no!</p>
     const searchRegex = new RegExp(this.state.searchTerm, 'i')
     this.setState({ foundMovies: this.state.movies.filter(movie => movie.title.match(searchRegex))})
   }

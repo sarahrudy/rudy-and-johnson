@@ -6,7 +6,6 @@ import './MovieSlider.css'
 import OneSlide from '../OneSlide/OneSlide'
 
 const MovieSlider = ({ movies }) => {
-  console.log(movies)
   const featuredMovies = movies.slice(1, 20).map(movie => {
     const { id, title, backdrop_path } = movie
 

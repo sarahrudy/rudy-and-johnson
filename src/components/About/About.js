@@ -1,6 +1,6 @@
 import React from 'react';
-import RudyPhoto from './lubeck.png'
-import JohnsonPhoto from './0B177B52-5B5A-4F43-9E2B-9F805038FD1C.png'
+import RudyPhoto from '../../images/lubeck.png'
+import JohnsonPhoto from '../../images/johnson.png'
 import { NavLink } from 'react-router-dom'
 import './About.css';
 
@@ -26,7 +26,7 @@ const About = () => {
       <div className="johnson-section">
         <h3>Anna Johnson</h3>
         <NavLink to="/anna" target="_blank">
-        <img className="johnson-photo" src={ JohnsonPhoto } alt='Anna Johnson Bio Photo'/>
+        <img className="johnson-photo" src={ JohnsonPhoto } alt='Anna Johnson Bio'/>
         </NavLink>
         <div className="johnson-bio">
           <p>Hello! My name is Anna and I’m currently a Front End Engineering student at Turing School of Software & Design. Thank you so much for taking the time to read a bit about me.</p>
