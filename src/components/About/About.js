@@ -26,7 +26,7 @@ const About = () => {
       <div className="johnson-section">
         <h3>Anna Johnson</h3>
         <NavLink to="/anna" target="_blank">
-        <img className="johnson-photo" src={ JohnsonPhoto } alt='Anna Johnson Bio Photo'/>
+        <img className="johnson-photo" src={ JohnsonPhoto } alt='Anna Johnson Bio'/>
         </NavLink>
         <div className="johnson-bio">
           <p>Hello! My name is Anna and I’m currently a Front End Engineering student at Turing School of Software & Design. Thank you so much for taking the time to read a bit about me.</p>
