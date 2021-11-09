@@ -44,8 +44,3 @@ Welcome to Rudy & Johnson -- our take on the classic Rotten Tomatillos project f
 We'd love to make this app even better by adding a few features:
 * The ability for a user to create an account in order to log in and leave user reviews on movies.
 
-#### Contact Me 
-
-<!--Personal Definitions -->
-[linkedin2]: https://www.linkedin.com/in/rudysarah/
-[github2]: https://github.com/sarahrudy
