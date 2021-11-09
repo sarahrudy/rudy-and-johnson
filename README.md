@@ -46,8 +46,6 @@ We'd love to make this app even better by adding a few features:
 
 #### Contact Me 
 
-[<img src="https://img.shields.io/badge/LinkedIn-katie-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0FBBD6"/>][linkedin2]
-[<img src="https://img.shields.io/badge/Github-knees4bees-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github2]
 <!--Personal Definitions -->
 [linkedin2]: https://www.linkedin.com/in/rudysarah/
 [github2]: https://github.com/sarahrudy
