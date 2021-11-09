@@ -17,7 +17,6 @@ Welcome to Rudy & Johnson -- our take on the classic Rotten Tomatillos project f
 4. Create a multi-page UX using Router
 
 #### Contributors
-![LinkedIn-Logo](https://user-images.githubusercontent.com/78389005/140859587-61e19d95-c011-434c-8770-b1d941376c49.png)
 [Sarah Rudy](https://www.linkedin.com/in/rudysarah/) && [Anna Johnson](https://www.linkedin.com/in/aesprague/)
 
 #### Technologies Used
