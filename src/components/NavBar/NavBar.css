@@ -1,8 +1,8 @@
 .nav-bar-container {
   display: inline-flex;
   justify-content: space-between;
-  width: 100%;
   align-items: center;
+  width: 100%;
   margin: 20px;
   font-family: 'Lora', serif;
 }
@@ -10,9 +10,8 @@
 .title {
   display: inline-flex;
   font-family: 'Poiret One', cursive;
-  font-size: 4em;
-  width: 100%;
-  height: auto;
+  font-size: 50px;
+  height: fit-content;
   font-weight: 800;
   color: #39414D;
 }
@@ -21,6 +20,7 @@
   font-family: 'Poiret One', cursive;
   color: #F9FBFA;
   font-size: 35px;
+  margin: 50px 10px 10px 10px;
 }
 
 .navBar-p {
@@ -41,7 +41,7 @@
   font-family: 'Lora', serif;
   background-color: #F2F4F4;
   color: #39414D;
-  font-size: 20px;
+  font-size: 15px;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
@@ -51,7 +51,7 @@
   border: 1px solid white;
   padding: 5px;
   font-family: 'Lora', serif;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
   color: white;
   background-color: none;
@@ -61,6 +61,16 @@
   .navBar-p {
     display: none
   }
+
+  .nav-bar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }  
+}
+
+@media screen and (max-width: 450px) {
+  
 }
 
   @media (hover: hover) {
