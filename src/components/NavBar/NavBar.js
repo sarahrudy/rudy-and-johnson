@@ -10,7 +10,6 @@ const NavBar = ({ submitSearch, handleChange, value }) => {
         <NavLink to="/">
           <h1 className="title">🎥 RUDY & JOHNSON</h1>
         </NavLink>
-          <p className='navBar-p'>Movie reviews you can trust</p>
       </div>
       <div>
         <NavLink to="/about" className="about-link">ABOUT US</NavLink>
